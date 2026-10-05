@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Student Result Dashboard</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX5XV40DK8Zv2z5FHj1xCb5tv7rr20c2Gu1J6Nlo5HUA&s=10");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        nav {
+            background-color: navy;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav li {
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        section {
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: navy;
+        }
+
+        form {
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            width: min(100%, 620px);
+            margin: 24px auto 0;
+            padding: 30px;
+            background-color: lightblue;
+            border-radius: 12px;
+            box-shadow: 4px 8px 10px grey;
+        }
+
+        form h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 16px 0 6px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 11px 12px;
+            width: 100%;
+            border: 1px solid grey;
+            border-radius: 5px;
+            font: inherit;
+        }
+
+        button {
+            background-color: navy;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 18px 8px 0 0;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #para {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .details {
+            width: min(100%, 900px);
+            margin: 0 auto;
+        }
+
+        .details section {
+            margin: 12px 20px;
+            background-color: rgba(255, 255, 255, 0.88);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                gap: 18px;
+                padding: 14px 10px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+
+            form {
+                padding: 22px 18px;
+            }
+
+            form h1 {
+                font-size: 24px;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#course">Course</a></li>
+        <li><a href="#specialization">Specialization</a></li>
+    </nav>
+
+
+    <main>
+        <section id="home">
+            <form>
+                <h1>Interactive Student Result Dashboard</h1>
+
+                <label for="i1">Student Name:</label>
+                <input type="text" name="n1" id="i1">
+
+                <label for="i2">Student Reg:</label>
+                <input type="number" name="n2" id="i2">
+
+                <label for="i3">HTML Marks:</label>
+                <input type="number" name="n3" id="i3">
+
+                <label for="i4">CSS Marks:</label>
+                <input type="number" name="n4" id="i4">
+
+                <label for="i5">JavaScript Marks:</label>
+                <input type="number" name="n5" id="i5">
+
+                <button type="button" onclick="check()">Result</button>
+                <button type="reset">Reset</button>
+                <p id="para"></p>
+            </form>
+        </section>
+
+        <div class="details">
+            <section>
+                <h2>Student Result Dashboard</h2>
+                <p>
+                    Welcome to the Interactive Student Result Dashboard.
+                    Enter the student's details and marks to calculate
+                    the total, average, percentage, grade and result status.
+                </p>
+            </section>
+
+            <section id="course">
+                <h2>Course</h2>
+                <p>
+                    Our course focuses on web development and programming.
+                    Students learn HTML, CSS and JavaScript to create
+                    interactive and responsive websites.
+                </p>
+            </section>
+
+            <section id="specialization">
+                <h2>Specialization</h2>
+                <p>
+                    Specialization includes Front-End Web Development,
+                    UI Design, JavaScript Programming and Responsive
+                    Web Design.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <script>
+
+        function check() {
+
+            let n1 = document.getElementById("i1").value;
+            let n2 = document.getElementById("i2").value;
+
+            let n3 = Number(document.getElementById("i3").value);
+            let n4 = Number(document.getElementById("i4").value);
+            let n5 = Number(document.getElementById("i5").value);
+
+            let total = n3 + n4 + n5;
+
+            let avg = total / 3;
+
+            let percentage = (total / 300) * 100;
+
+            let grade;
+
+            if (avg >= 80) {
+                grade = "A";
+            }
+            else if (avg >= 70) {
+                grade = "B";
+            }
+            else if (avg >= 60) {
+                grade = "C";
+            }
+            else if (avg >= 40) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+
+            let status;
+
+            if (avg >= 40) {
+                status = "Pass";
+            }
+            else {
+                status = "Fail";
+            }
+
+            document.getElementById("para").innerHTML =
+
+                "<h1>Student Details</h1>" +
+
+                "Student Name: " + n1 + "<br>" +
+
+                "Student Reg: " + n2 + "<br>" +
+
+                "HTML Marks: " + n3 + "<br>" +
+
+                "CSS Marks: " + n4 + "<br>" +
+
+                "JavaScript Marks: " + n5 + "<br>" +
+
+                "Total Marks: " + total + "<br>" +
+
+                "Average Marks: " + avg + "<br>" +
+
+                "Percentage: " + percentage + "%<br>" +
+
+                "Grade: " + grade + "<br>" +
+
+                "Status: " + status;
+
+        }
+
+    </script>
+
+</body>
+</html>
+
