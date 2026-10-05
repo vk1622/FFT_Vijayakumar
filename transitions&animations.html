@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Transitions & Animations</title>
+        <style>
+            body{ font-family: Arial; margin: 30px; }
+            button{
+                margin-left: 120px; width: 100px; height: 50px;
+                background: red; color: white; border: none;
+                border-radius: 10px; transition: 1s;
+            }
+            button:hover{ background: green; transform: scale(1.2); }
+
+            .animation-area{
+                display: flex; gap: 35px; flex-wrap: wrap; margin-top: 30px;
+            }
+            .example{ text-align: center; }
+
+                    
+            .shape{ width: 100px; height: 100px; margin-top: 10px; }
+
+            .move-box{ background: blue; animation: move 2s ease-in-out alternate infinite; }
+            @keyframes move{
+                from{ transform: translateX(0); }
+                to{ transform: translateX(80px); }
+            }
+
+            
+            .bounce-circle{ background: orange; border-radius: 50%; animation: bounce 1s ease-in-out alternate infinite; }
+            @keyframes bounce{
+                from{ transform: translateY(0); }
+                to{ transform: translateY(-50px); }
+            }
+
+            .rotate-box{ background: purple; animation: rotate 2s linear infinite; }
+            @keyframes rotate{
+                from{ transform: rotate(0deg); }
+                to{ transform: rotate(360deg); }
+            }
+            .pulse-box{ background: hotpink; animation: pulse 1s ease-in-out alternate infinite; }
+            @keyframes pulse{
+                from{ transform: scale(0.7); }
+                to{ transform: scale(1.2); }
+            }
+
+            .color-box{ background: red; animation: colorChange 3s linear infinite; }
+            @keyframes colorChange{
+                0%{ background: red; }
+                33%{ background: yellow; }
+                66%{ background: green; }
+                100%{ background: red; }
+            }
+
+            .load-wrap{ margin-top: 20px; }
+            .spinner{
+                position: relative; width: 130px; height: 130px;
+                margin-top: 10px;
+            }
+            .shape-spin{
+                position: absolute; width: 24px; height: 24px;
+                top: 50%; left: 50%;
+                margin-left: -12px; margin-top: -12px;
+            }
+            .s1{
+                background: red; border-radius: 50%;
+                animation: orbit1 1.5s linear infinite;
+            }
+            .s2{
+                background: blue; border-radius: 6px;
+                animation: orbit2 1.5s linear infinite;
+            }
+            .s3{
+                background: green; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                animation: orbit3 1.5s linear infinite;
+            }
+            .s4{
+                background: orange; border-radius: 0 50% 50% 50%;
+                animation: orbit4 1.5s linear infinite;
+            }
+
+            @keyframes orbit1{
+                0%   { transform: rotate(0deg) translateY(-42px) rotate(0deg); }
+                100% { transform: rotate(360deg) translateY(-42px) rotate(-360deg); }
+            }
+            @keyframes orbit2{
+                0%   { transform: rotate(90deg) translateY(-42px) rotate(0deg); }
+                100% { transform: rotate(450deg) translateY(-42px) rotate(-360deg); }
+            }
+            @keyframes orbit3{
+                0%   { transform: rotate(180deg) translateY(-42px) rotate(0deg); }
+                100% { transform: rotate(540deg) translateY(-42px) rotate(-360deg); }
+            }
+            @keyframes orbit4{
+                0%   { transform: rotate(270deg) translateY(-42px) rotate(0deg); }
+                100% { transform: rotate(630deg) translateY(-42px) rotate(-360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Transitions & Animations</h1>
+        <button>Action</button>
+
+        <div class="animation-area">
+            <div class="example"><p>1. Moving box</p><div class="shape move-box"></div></div>
+            <div class="example"><p>2. Bouncing circle</p><div class="shape bounce-circle"></div></div>
+            <div class="example"><p>3. Rotating box</p><div class="shape rotate-box"></div></div>
+            <div class="example"><p>4. Pulsing box</p><div class="shape pulse-box"></div></div>
+            <div class="example"><p>5. Color-changing box</p><div class="shape color-box"></div></div>
+        </div>
+
+        <br><br>
+        <div class="load-wrap">
+            <p>Loading circle with 4 shapes</p>
+            <div class="spinner">
+                <div class="shape-spin s1"></div>
+                <div class="shape-spin s2"></div>
+                <div class="shape-spin s3"></div>
+                <div class="shape-spin s4"></div>
+            </div>
+        </div>
+    </body>
+</html>
