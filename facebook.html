@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>Facebook – log in or sign up</title>
+	<style>
+		body {
+			font-family: Arial;
+			background-color: #f0f2f5;
+		}
+		.container {
+			width: 900px;
+			margin: 120px auto;
+		}
+		.left {
+			width: 470px;
+			float: left;
+			margin-top: 50px;
+		}
+		.logo {
+			color: #1877f2;
+			font-size: 55px;
+			margin: 0;
+		}
+		.tagline {
+			font-size: 24px;
+		}
+		.login-card {
+			width: 350px;
+			float: right;
+			background-color: white;
+			padding: 15px;
+			text-align: center;
+			box-shadow: 0 0 8px #aaa;
+		}
+		input {
+			width: 100%;
+			height: 45px;
+			margin: 6px 0;
+			font-size: 16px;
+		}
+		button {
+			border: none;
+			color: white;
+			font-weight: bold;
+			padding: 12px;
+		}
+		.login-button { width: 100%; background-color: #1877f2; font-size: 18px; }
+		.forgot { display: block; margin: 15px; color: #1877f2; }
+		.create-button { background-color: #42b72a; }
+		.below { text-align: center; margin-top: 20px; font-size: 14px; clear: both; }
+		.page-link { color: #1877f2; text-decoration: none; }
+		.page-link:hover { text-decoration: underline; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+				<h1 class="logo">facebook</h1>
+				<p class="tagline">Facebook helps you connect and share with the people in your life.</p>
+		</div>
+
+		<div>
+				<form class="login-card" action="#" method="post">
+					<input type="text" name="email" placeholder="Email address or phone number" aria-label="Email address or phone number" required>
+					<input type="password" name="password" placeholder="Password" aria-label="Password" required>
+					<button class="login-button" type="submit">Log In</button>
+					<a class="forgot" href="#">Forgotten password?</a>
+					<button class="create-button" type="button">Create New Account</button>
+				</form>
+				<p class="below"><a class="page-link" href="#">Create a Page</a> for a celebrity, brand or business.</p>
+		</div>
+	</div>
+</body>
+</html>
